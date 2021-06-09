@@ -1,2 +1,18 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="justify-content-around col-9 d-flex flex-wrap row align-items-center mx-auto">
+    <% @movies.each do |movie| %>
+      <div class="col-2 movie-container-home">
+        <div class="title-container-home">
+          <p><%= movie.title.slice(0,18)+(movie.title.length > 18 ? "..." : "") %></p>    
+        </div>
+        <div>
+          <p> <%= movie.runtime %> </p>
+          <p> <%= movie.release_year %> </p>
+          <p> <%= movie.genre %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
