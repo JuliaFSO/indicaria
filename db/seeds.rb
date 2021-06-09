@@ -11,15 +11,15 @@ puts '=' * 20
 
 100.times do
   begin
-    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['TMDB_KEY']}&language=en-US"
+    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['TMDB_KEY']}&language=pt-BR"
     open(url).status
   rescue OpenURI::HTTPError
     movie_id += 1
-    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['TMDB_KEY']}&language=en-US"
+    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['TMDB_KEY']}&language=pt-BR"
     retry
   else
-    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['TMDB_KEY']}&language=en-US"
-    watch_url = "https://api.themoviedb.org/3/movie/#{movie_id}/watch/providers?api_key=#{ENV['TMDB_KEY']}&language=en-US"
+    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['TMDB_KEY']}&language=pt-BR"
+    watch_url = "https://api.themoviedb.org/3/movie/#{movie_id}/watch/providers?api_key=#{ENV['TMDB_KEY']}&language=pt-BR"
     movie = JSON.parse(open(url).read)
     provider = JSON.parse(open(watch_url).read)['results']['BR']
     if provider
