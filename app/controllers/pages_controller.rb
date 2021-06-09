@@ -11,5 +11,7 @@ class PagesController < ApplicationController
   def user_preferences
   end
 
-end
+  def profile
+  end
 
+end
