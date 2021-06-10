@@ -1,13 +1,31 @@
 
-<h1 class="text-center m-5">Filme</h1>
+<h1 class="text-center m-5"> <%= @movie.title %> </h1>
 
-<div class="d-flex justify-content-around align-items-center">
+<div class="d-flex justify-content-around align-items-center ">
 
-  <div>
+  <div class="mr-5">
     <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url %>
+    <p> <%= image_tag "https://image.tmdb.org/t/p/w500#{@movie.provider_logo}", alt: @movie.provider_logo, class:"w-50 h-50 mt-5 mt-5" %> </p>
+    <% if @movie.trailer_url %>
+      <iframe src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+    <% end %>
   </div>
 
-  <% if @movie.trailer_url %>
-  <iframe src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-  <% end %>
+  <div>
+    <br>
+    <h3><%= "Sinopse: #{@movie.overview}" %></h3>
+    <br>
+    <h3><%= "Nota: #{@movie.vote_average}" %></h3>
+    <br>
+    <h3><%= "Ano de lançamento: #{@movie.release_year}" %></h3>
+    <br>
+    <h3><%= "#{@movie.runtime} Minutos" %></h3>
+    <br>
+    <h3><%= "Genero: #{@movie.genre}" %></h3>
+    <br>
+    <h3><%= "Idioma: #{@movie.language}" %></h3>
+    <br>
+    <h3><%= "País de origin: #{@movie.country}" %></h3>
+  </div>
+
 </div>
