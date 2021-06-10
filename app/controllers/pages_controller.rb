@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @movies = Movie.all
+    @movies = Movie.all.sample(12)
   end
 
   def dashboard
@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   end
 
   def profile
+    
   end
 
 end

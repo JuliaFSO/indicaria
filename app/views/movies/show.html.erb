@@ -1,0 +1,13 @@
+
+<h1 class="text-center m-5">Filme</h1>
+
+<div class="d-flex justify-content-around align-items-center">
+
+  <div>
+    <%=image_tag @movie.poster_url, alt: @movie.poster_url %>
+    <div>
+      <p><%= @movie.title.slice(0,27)+(@movie.title.length > 27 ? "..." : "") %></p>
+    </div>
+  </div>
+
+</div>

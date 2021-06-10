@@ -1,0 +1,15 @@
+
+.movie-container-home {
+  opacity: 1;
+  width: 180px;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}
+
+.movie-img-home {
+  width: 100%;
+  max-width: 180px !important;
+  object-fit: cover;
+  object-position: center;
+}

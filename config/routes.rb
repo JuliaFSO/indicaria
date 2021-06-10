@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     patch "refuse", to: "movie_picks#refuse"
   end
 
+  resources :movies, only: [:index, :show]
 end
