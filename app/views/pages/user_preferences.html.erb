@@ -4,7 +4,7 @@
     <% @movies_array.each do |movie| %>
       <div class="movie-container-up">
       <%= link_to movie_path(movie) do %>
-        <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", class: 'movie-img-up rounded' %>
+        <%=image_tag "https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: 'movie-img-up rounded' %>
           <div class="title-container-up">
             <p><%= movie.title.slice(0,27)+(movie.title.length > 27 ? "..." : "") %></p>
           </div>
