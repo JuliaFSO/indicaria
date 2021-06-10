@@ -4,10 +4,10 @@
 <div class="d-flex justify-content-around align-items-center">
 
   <div>
-    <%=image_tag @movie.poster_url, alt: @movie.poster_url %>
-    <div>
-      <p><%= @movie.title.slice(0,27)+(@movie.title.length > 27 ? "..." : "") %></p>
-    </div>
+    <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url %>
   </div>
 
+  <% if @movie.trailer_url %>
+  <iframe src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+  <% end %>
 </div>
