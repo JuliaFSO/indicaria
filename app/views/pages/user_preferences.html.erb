@@ -1,0 +1,26 @@
+<div class="d-flex row justify-content-center">
+
+  <div class="justify-content-around col-6 d-flex align-items-center mt-4">
+    <% @movies_array.each do |movie| %>
+      <div class="movie-container-up">
+      <%= link_to movie_path(movie) do %>
+        <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", class: 'movie-img-up rounded' %>
+          <div class="title-container-up">
+            <p><%= movie.title.slice(0,27)+(movie.title.length > 27 ? "..." : "") %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="round-botton align-items-center justify-content-center">
+      <p><%= "Sim" %></p>
+    </div>
+
+    <div class="round-botton align-items-center justify-content-center">
+      <p><%= "Nao" %></p>
+    </div>
+
+  </div>
+
+
+</div>

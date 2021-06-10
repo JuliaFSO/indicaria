@@ -15,6 +15,13 @@ class PagesController < ApplicationController
   end
 
   def user_preferences
+    @movies_array = []
+    movies = Movie.all.sample(1)
+    movies.each do |movie|
+      if movie.poster_url != nil
+        @movies_array << movie
+      end
+    end
   end
 
   def profile
