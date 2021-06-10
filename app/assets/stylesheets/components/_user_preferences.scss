@@ -1,0 +1,30 @@
+
+.movie-container-up {
+  opacity: 1;
+  width: 400px;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}
+
+.movie-img-up {
+  width: 100%;
+  max-width: 400px !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.round-botton {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+}
+
+.title-container-up {
+
+  p {
+    font-size: 34px;
+  }
+}
