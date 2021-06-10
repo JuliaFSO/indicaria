@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #4B636C;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +9,47 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 150px;
+}
+
+.navbar-link {
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(175, 166, 166);
+  padding: .35rem .5rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 3px;
+  font-weight: 500;
+    &:hover {
+      color: white;
+      padding: .35rem .5rem;
+      font-size: 1rem;
+      border-radius: 3px;
+      font-weight: 500;
+      text-decoration: none;
+      background-color: #832161;
+  }
+}
+
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #1EDD88;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }

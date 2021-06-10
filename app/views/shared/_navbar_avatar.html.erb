@@ -6,7 +6,7 @@
   <div class="align-self-center pt-3 w-50">
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
       <div class="search-form-control form-group flex-grow-1">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query"  placeholder="Buscar um filme" />
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Buscar um filme" />
         <button name="button" type="submit" class="btn btn-flat">
         <i class="fas fa-search"></i>
         </button>
@@ -18,10 +18,24 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active align-self-center">
-        <%= link_to "Cadastre-se", new_user_session_path, class: "navbar-link" %>
+        <%= link_to "Preferências", "#", class: "navbar-link" %>
+      </li>
+      <li class="nav-item active align-self-center">
+        <%= link_to "Indicações", "#", class: "navbar-link" %>
+      </li>
+      <li class="nav-item active align-self-center">
+        <%= link_to "Meu perfil", "#", class: "navbar-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/juliafso", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Meu perfil", "#", class: "dropdown-item" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
       </li>
     </ul>
   </div>
