@@ -12,9 +12,17 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar_avatar' %>
 
-    <%= yield %>
+    <% if current_user %>
+     <%= render 'shared/navbar_avatar' %>
+    <% else %>
+     <%= render 'shared/navbar' %>
+    <% end %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+    
     <%= render 'shared/flashes' %>
   </body>
 </html>
