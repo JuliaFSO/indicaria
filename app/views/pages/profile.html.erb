@@ -5,7 +5,7 @@
     <% @movie_picks.each do |movie_pick| %>
       <%= link_to movie_path(movie_pick.movie) do %>
         <div class="poster-profile col-lg-2">
-          <%= image_tag movie_pick.movie.poster_url, class: 'movie-img rounded' %>
+          <%= image_tag  "https://image.tmdb.org/t/p/w500#{movie_pick.movie.poster_url}", class: 'movie-img rounded' %>
         </div>
 
         <div class="movies-recap col-lg-5">
