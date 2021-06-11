@@ -1,0 +1,35 @@
+.movies-recap {
+  text-align: justify;
+  position: relative;
+
+  h3 {
+    font-size: 22px;
+    font-weight: regular;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: regular;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.poster-profile {
+  background: center;
+  opacity: 1;
+  width: 120px;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}
+
+.movie-img {
+  width: 100%;
+  min-width: 120px !important;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
