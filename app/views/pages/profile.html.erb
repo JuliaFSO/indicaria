@@ -1,6 +1,21 @@
-  <h2> PROFILE TESTADO!!! </h2>
+<div class="container mt-5">
+  <h1 class="text-center mb-5">Minha lista</h1>
 
-  <% @movie_picks.each do |movie_pick| %>
-    <p>  <%= movie_pick.movie.title %> </p>
+  <div class="row align-items-center">
+    <% @movie_picks.each do |movie_pick| %>
+      <%= link_to movie_path(movie_pick.movie) do %>
+        <div class="poster-profile col-lg-2">
+          <%= image_tag movie_pick.movie.poster_url, class: 'movie-img rounded' %>
+        </div>
+
+        <div class="movies-recap col-lg-5">
+          <h3> <%= movie_pick.movie.title %> </h3>
+          <p> <%= movie_pick.movie.overview.slice(0,140)+(movie_pick.movie.overview.length > 140 ? "..." : "") %></p>
+        </div>
     <hr>
-  <% end %>
+
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
