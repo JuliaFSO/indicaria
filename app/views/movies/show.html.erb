@@ -4,7 +4,7 @@
   <div class="d-flex justify-content-around">
   
     <div class="mr-5 align-self-center">
-      <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url, class:"movie-poster" %>
+      <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url, class:"movie-poster mt-5" %>
       <h3 class="provider"> Disponível em: </h3><%= image_tag "https://image.tmdb.org/t/p/w500#{@movie.provider_logo}", alt: @movie.provider_logo, class:"provider-logo" %> 
       <% if @movie.trailer_url %>
         <iframe src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
@@ -22,9 +22,6 @@
       <span class="items"> País de origem: </span>  <span class="info"><%= "#{@movie.country}"%></span>
     </div>
 
-    <div class="back-button">
-    </div>
-
-
+ 
   </div>
 </div>
