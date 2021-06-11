@@ -11,3 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  background-color: white;
+}
+
+html, body {
+  height: auto;
+  min-height: 100%;
+}
+
+.indicaria_content {
+  min-height: 77vh !important;
+}

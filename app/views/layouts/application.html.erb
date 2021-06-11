@@ -19,8 +19,20 @@
      <%= render 'shared/navbar' %>
     <% end %>
   
-      <%= yield %>
+      <div class="indicaria_content pb-5">
+        <%= yield %>
+          <% if notice %>
+            <div class="alert alert-warning" role="alert">
+              <%= notice %>
+            </div>
+          <% end %>
+          <% if alert %>
+            <div class="alert alert-danger" role="alert">
+              <%= alert %>
+            </div>
+          <% end %>
+      </div>
 
-    <%= render 'shared/flashes' %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
