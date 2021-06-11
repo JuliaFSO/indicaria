@@ -10,24 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_144129) do
+ActiveRecord::Schema.define(version: 2021_06_10_234920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "movie_picks", force: :cascade do |t|
-    t.bigint "movies_id", null: false
-    t.bigint "users_id", null: false
     t.boolean "watched", default: false
     t.boolean "recommended", default: false
-    t.boolean "liked", default: false
-    t.boolean "liked_movie", default: false
     t.boolean "watch_list", default: false
-    t.boolean "accepted", default: false
+    t.boolean "refused", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["movies_id"], name: "index_movie_picks_on_movies_id"
-    t.index ["users_id"], name: "index_movie_picks_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.index ["movie_id"], name: "index_movie_picks_on_movie_id"
+    t.index ["user_id"], name: "index_movie_picks_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -63,6 +61,6 @@ ActiveRecord::Schema.define(version: 2021_06_09_144129) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "movie_picks", "movies", column: "movies_id"
-  add_foreign_key "movie_picks", "users", column: "users_id"
+  add_foreign_key "movie_picks", "movies"
+  add_foreign_key "movie_picks", "users"
 end

@@ -15,17 +15,14 @@ class PagesController < ApplicationController
   end
 
   def user_preferences
-    @movies_array = []
-    movies = Movie.all.sample(1)
-    movies.each do |movie|
-      if movie.poster_url != nil
-        @movies_array << movie
-      end
-    end
+    @movie = Movie.where.not(poster_url: nil).sample
+    @movie = Movie.where.not(poster_url: nil).sample until current_user.movie_picks.where(movie: @movie).empty?
+    @pick = MoviePick.create(user: current_user, movie: @movie, recommended: true)
+
   end
 
   def profile
-    
+    @movie_picks = current_user.movie_picks.where(watch_list: true, watched: false)
   end
 
 end
