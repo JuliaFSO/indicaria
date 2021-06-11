@@ -1,2 +1,45 @@
-<h2> DASHBOARD TESTADO!!! </h2>
+<div  class="container mt-3">
+  <div>
+    <% if @movie_picks.present? %> 
+      <%= @movie_picks.movie.title %>
+    <% else %>
+      <h1> Nenhum existe filme dessa categoria em sua lista! </h1>
+    <% end %>  
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%= link_to "Match Page", user_preferences_path %>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div> 
+    <%= link_to "Ação", dashboard_path(query: "Ação"), class: "mr-3" %>
+    <%= link_to "AnimaÇão", dashboard_path(query: "Animação"), class: "mr-3"  %>
+    <%= link_to "Aventura", dashboard_path(query: "Aventura"), class: "mr-3"  %>
+    <%= link_to "Comédia", dashboard_path(query: "Comédia"), class: "mr-3"  %>
+    <%= link_to "Crime", dashboard_path(query: "Crime"), class: "mr-3"  %>
+    <%= link_to "Documentário", dashboard_path(query: "Documentário"), class: "mr-3" %>
+    <%= link_to "Drama", dashboard_path(query: "Drama"), class: "mr-3"  %>
+    <%= link_to "Faroeste", dashboard_path(query: "Faroeste"), class: "mr-3"  %>
+    <%= link_to "Ficção científica", dashboard_path(query: "Ficção científica"), class: "mr-3"  %>
+    <%= link_to "Mistério", dashboard_path(query: "Mistério"), class: "mr-3"  %>
+    <%= link_to "Música", dashboard_path(query: "Música"), class: "mr-3"  %>
+    <%= link_to "Romance", dashboard_path(query: "Romance"), class: "mr-3"  %> 
+    <%= link_to "Terror", dashboard_path(query: "Terror"), class: "mr-3"  %>
+    <%= link_to "Thriller", dashboard_path(query: "Thriller"), class: "mr-3"  %> 
+  </div>
+</div>
+  <br>
+  <% genres = [] %>
+  <% Movie.all.each do |m| %>
+    <% genres << m.genre %>
+  <% end %>
+
+  <% genres.uniq %>
