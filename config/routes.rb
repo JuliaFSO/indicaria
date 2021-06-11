@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "dashboard", to: "pages#dashboard"
   get "user_preferences", to: "pages#user_preferences"
+  get "profile", to: "pages#profile", as: :profile
   
-  resources :movie_picks do
-    patch "refuse", to: "movie_picks#refuse"
-  end
-
+  resources :movie_picks 
+  
+  patch "/:id/refuse", to: "movie_picks#refuse", as: :refuse
+  patch "/:id/watch_movie", to: "movie_picks#watch_movie", as: :watch_movie
+  patch "/:id/watch_list", to: "movie_picks#watch_list", as: :watch_list
+  
   resources :movies, only: [:index, :show]
+
 end
