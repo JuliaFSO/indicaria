@@ -1,0 +1,42 @@
+.title {
+  font-size: 30px;
+  font-weight: regular;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Raleway', sans-serif;
+}
+
+.items {
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+    padding-top: 15px;
+}
+
+.info {
+    font-size: 20px;
+    font-weight: normal;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.provider {
+    padding-top: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.provider-logo {
+  width: 85px;
+}
+
+.movie-poster {
+  height: 530px;
+}
+
+.back-button {
+  background-color: #698996;
+  flex-grow: 1;
+}
