@@ -1,7 +1,4 @@
-
-<div class="container pt-5">
-
-  <div class="d-flex justify-content-around">
+<div class="d-flex justify-content-around">
   
     <div class="mr-5 align-self-center">
       <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url, class:"movie-poster mt-5" %>
@@ -22,6 +19,4 @@
       <span class="items"> País de origem: </span>  <span class="info"><%= "#{@movie.country}"%></span>
     </div>
 
- 
-  </div>
 </div>
