@@ -5,7 +5,7 @@
         <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url, class:"movie-poster mt-5" %>
         <h3 class="provider"> Disponível em: </h3><%= image_tag "https://image.tmdb.org/t/p/w500#{@movie.provider_logo}", alt: @movie.provider_logo, class:"provider-logo" %> 
         <% if @movie.trailer_url %>
-          <iframe src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+          <iframe class:"trailer" src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
         <% end %>
       </div>
 
