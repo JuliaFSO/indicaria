@@ -21,6 +21,9 @@ class PagesController < ApplicationController
     else
       @movie_picks = @movie_picks.sample
     end
+
+    @genres = current_user.movie_picks.where(watch_list: true).map(&:movie).pluck(:genre).uniq
+
   end
 
   def user_preferences
@@ -32,6 +35,7 @@ class PagesController < ApplicationController
 
   def profile
     @movie_picks = current_user.movie_picks.where(watch_list: true, watched: false)
+    @movie_count = current_user.movie_picks.where(watch_list: true).count
   end
 
 end
