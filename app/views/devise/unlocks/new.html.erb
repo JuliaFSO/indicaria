@@ -1,6 +1,6 @@
 <div  class="container mt-3">
 
-  <h2>Resend unlock instructions</h2>
+  <h2>Reenviar instruções de desbloqueio</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>
@@ -13,8 +13,8 @@
                   input_html: { autocomplete: "email" } %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Resend unlock instructions" %>
+    <div>
+      <%= f.button :submit, "Reenviar instruções de desbloqueio", class:"btn mb-2 btn-secondary btn-block" %>
     </div>
   <% end %>
 
