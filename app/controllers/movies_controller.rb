@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show, :return_to_back]
+  skip_before_action :authenticate_user!, only: [ :index, :show]
 
   def index
     if params[:query].present?
