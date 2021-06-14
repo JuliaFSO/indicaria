@@ -19,11 +19,15 @@
       <span class="items"> Idioma: </span>  <span class="info"><%= "#{@movie.language}"%></span><br>
       <span class="items"> País de origem: </span>  <span class="info"><%= "#{@movie.country}"%></span>
     </div>
-
   </div>
   
   <form>
     <input type="button" class="btn btn-dark" value="Go back!" onclick="history.back()">
   </form>
-
 </div>
+
+<% if current_user %>
+  <%= render 'shared/background_button_user' %>
+<% else %>
+  <%= render 'shared/background_button' %>
+<% end %>
