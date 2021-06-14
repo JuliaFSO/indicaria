@@ -7,7 +7,7 @@
       <%= link_to movie_path(movie) do %>
         <%=image_tag "https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: 'movie-img-home rounded' %>
           <div class="title-container-home">
-            <p><%= movie.title.slice(0,18)+(movie.title.length > 18 ? "..." : "") %></p>
+            <p><%= movie.title.slice(0,14)+(movie.title.length > 14 ? "..." : "") %></p>
           </div>
         </div>
       <% end %>

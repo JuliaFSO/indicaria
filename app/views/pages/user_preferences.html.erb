@@ -14,22 +14,20 @@
 
     <div class="round-botton align-items-center justify-content-center">
       <%= link_to refuse_path(@pick), method: :patch do %>
-        <p><%= "Não" %></p>
+        <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_refuse_c7xy1b.png" %>
       <% end %>
     </div>
 
     <div class="round-botton align-items-center justify-content-center">
       <%= link_to  watch_movie_path(@pick), method: :patch do %>
-        <p><%= "Visto" %></p>
+        <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_check_p2egbe.png" %>
       <% end %>
     </div>
 
     <div class="round-botton align-items-center justify-content-center">
       <%= link_to   add_to_watch_list_path(@pick), method: :patch do %>
-        <p><%= "Sim" %></p>
+        <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %>
       <% end %>
     </div>
-
   </div>
-
 </div>
