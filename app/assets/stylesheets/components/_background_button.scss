@@ -1,0 +1,40 @@
+.background-button {
+    width: max-content;
+    background-color: #C9C5BA;
+    height: 110px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-background {
+  background-color: #97B1A6;
+  border-radius: 10px;
+  width: 250px;
+  height: 40px;
+  align-self: center;
+  justify-items: center;
+  border: none;
+}
+
+.btn-background:hover {
+  background-color: #7cad99;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-font {
+  color: white;
+  text-decoration: none !important;
+  justify-items: center;
+  align-self: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none !important;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+  }
+}

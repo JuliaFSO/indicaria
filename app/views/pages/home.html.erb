@@ -14,6 +14,10 @@
       <% end %>
     <% end %>
   </div>
-  
 </div>
 
+<% if current_user %>
+  <%= render 'shared/background_button_user' %>
+<% else %>
+  <%= render 'shared/background_button' %>
+<% end %>

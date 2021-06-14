@@ -1,23 +1,33 @@
 <div  class="container mt-3">
   <div class="d-flex justify-content-around">
     
-      <div class="mr-5 align-self-center">
-        <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url, class:"movie-poster mt-5" %>
-        <h3 class="provider"> Disponível em: </h3><%= image_tag "https://image.tmdb.org/t/p/w500#{@movie.provider_logo}", alt: @movie.provider_logo, class:"provider-logo" %> 
-        <% if @movie.trailer_url %>
-          <iframe class:"trailer" src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-        <% end %>
-      </div>
+    <div class="mr-5 align-self-center">
+      <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url, class:"movie-poster mt-5" %>
+      <h3 class="provider"> Disponível em: </h3><%= image_tag "https://image.tmdb.org/t/p/w500#{@movie.provider_logo}", alt: @movie.provider_logo, class:"provider-logo" %> 
+      <% if @movie.trailer_url %>
+        <iframe class:"trailer" src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+      <% end %>
+    </div>
 
-      <div>
-        <h1 class="title text-center m-5"> <%= @movie.title%> </h1><br>
-        <span class="items"> Sinopse: <br></span> <span class="info"><%= "#{@movie.overview}"%></span><br><br>
-        <span class="items"> Nota: </span> <span class="info"><%= "#{@movie.vote_average}"%></span><br>
-        <span class="items"> Ano de lançamento: </span> <span class="info"><%= "#{@movie.release_year}"%></span><br>
-        <span class="info"><%= "#{@movie.runtime}"%></span><span class="items"> Minutos</span3><br>
-        <span class="items"> Gênero: </span> <span class="info"> <%= "#{@movie.genre}"%></span><br>
-        <span class="items"> Idioma: </span>  <span class="info"><%= "#{@movie.language}"%></span><br>
-        <span class="items"> País de origem: </span>  <span class="info"><%= "#{@movie.country}"%></span>
-      </div>
+    <div>
+      <h1 class="title text-center m-5"> <%= @movie.title%> </h1><br>
+      <span class="items"> Sinopse: <br></span> <span class="info"><%= "#{@movie.overview}"%></span><br><br>
+      <span class="items"> Nota: </span> <span class="info"><%= "#{@movie.vote_average}"%></span><br>
+      <span class="items"> Ano de lançamento: </span> <span class="info"><%= "#{@movie.release_year}"%></span><br>
+      <span class="info"><%= "#{@movie.runtime}"%></span><span class="items"> Minutos</span3><br>
+      <span class="items"> Gênero: </span> <span class="info"> <%= "#{@movie.genre}"%></span><br>
+      <span class="items"> Idioma: </span>  <span class="info"><%= "#{@movie.language}"%></span><br>
+      <span class="items"> País de origem: </span>  <span class="info"><%= "#{@movie.country}"%></span>
+    </div>
   </div>
+  
+  <form>
+    <input type="button" class="btn btn-dark" value="Go back!" onclick="history.back()">
+  </form>
 </div>
+
+<% if current_user %>
+  <%= render 'shared/background_button_user' %>
+<% else %>
+  <%= render 'shared/background_button' %>
+<% end %>
