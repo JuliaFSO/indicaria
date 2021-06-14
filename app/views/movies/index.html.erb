@@ -1,18 +1,22 @@
 
-<div class="d-flex row justify-content-center w-120 mx-auto mb-5">
+<div class="container">
 
-  <div class="justify-content-around col-6 d-flex flex-wrap h-20 align-items-center mx-auto">
     <% @movies_array.each do |movie| %>
-      <div class="col-2 movie-container-home">
-      <%= link_to movie_path(movie) do %>
-        <%=image_tag "https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: 'movie-img-home rounded' %>
-          <div class="title-container-home">
-            <p><%= movie.title.slice(0,14)+(movie.title.length > 14 ? "..." : "") %></p>
+        <%= link_to movie_path(movie), class:'text-decoration-none' do  %>
+          <div class="border-bottom row col-lg-12 mt-5 pb-5 d-flex justify-content-around align-center">
+            <div class="col-4 poster-movie-index ">
+              <%= image_tag  "https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: 'movie-img-index rounded' %>
+            </div>
+
+            <div class="col-8 movies-infos-index align-self-center">
+              <h3><%= movie.title.slice(0,29)+(movie.title.length > 29 ? "..." : "") %></h3>
+              <br>
+              <span class="item-genero"> Gênero: </span> <span class="info-genero"> <%= "#{movie.genre}"%></span><br>
+              <br>
+              <p> <%= movie.overview.slice(0,265)+(movie.overview.length > 265 ? "..." : "") %></p>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
     <% end %>
-  </div>
-  
-  
+
 </div>
