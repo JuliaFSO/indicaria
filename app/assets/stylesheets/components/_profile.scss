@@ -1,12 +1,14 @@
 .movies-recap {
   text-align: justify;
   position: relative;
+  text-decoration: none;
 
   h3 {
     font-size: 22px;
     font-weight: regular;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
   }
 
   p {
@@ -14,16 +16,18 @@
     font-weight: regular;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: 'Raleway', sans-serif;
+    text-decoration: none;
   }
 }
 
 .poster-profile {
   background: center;
   opacity: 1;
-  width: 120px;
+  width: 150px;
   position: relative;
   box-sizing: border-box;
   padding-bottom: 50px;
+  text-decoration: none;
 }
 
 .movie-img {
@@ -32,4 +36,14 @@
   object-fit: cover;
   object-position: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  text-decoration: none;
+}
+
+.movie-show-link {
+  text-decoration: none !important;
+}
+
+.div-avatar {
+  width: 350px;
+  height: 370px;
 }
