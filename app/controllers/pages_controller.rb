@@ -15,7 +15,6 @@ class PagesController < ApplicationController
     @movie = Movie.where.not(poster_url: nil).sample
     @movie = Movie.where.not(poster_url: nil).sample until current_user.movie_picks.where(movie: @movie).empty?
     @movie_picks = current_user.movie_picks.where(watch_list: true, watched: false)
-    # redirect_to request.referrer
     if params[:query].present?
       @movie_picks = @movie_picks.select {|m| m.movie.genre == params[:query]}
       @movie_picks = @movie_picks.sample
@@ -33,7 +32,6 @@ class PagesController < ApplicationController
 
   def profile
     @movie_picks = current_user.movie_picks.where(watch_list: true, watched: false)
-    # @back_url = session[:my_previous_url]
   end
 
 end

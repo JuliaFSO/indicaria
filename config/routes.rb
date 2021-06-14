@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   patch "/:id/watch_movie", to: "movie_picks#watch_movie", as: :watch_movie
   patch "/:id/add_to_watch_list", to: "movie_picks#add_to_watch_list", as: :add_to_watch_list
   patch "/:id/remove_from_watch_list", to: "movie_picks#remove_from_watch_list", as: :remove_from_watch_list
-  
+
   resources :movies, only: [:index, :show]
 
 end
