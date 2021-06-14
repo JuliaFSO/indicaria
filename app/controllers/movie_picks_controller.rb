@@ -1,5 +1,5 @@
 class MoviePicksController < ApplicationController
-  before_action :set_movie_pick, only: [:refuse, :watch_list, :watch_movie]
+  before_action :set_movie_pick, only: [:refuse, :add_to_watch_list, :remove_from_watch_list, :watch_movie]
 
   def refuse
     @movie_pick.update(refused: true)
@@ -12,8 +12,17 @@ class MoviePicksController < ApplicationController
   end
   
   def watch_list
-    @movie_pick.update(watch_list: true)
+    @movie_pick.update(watch_list: !@movie_pick.watch_list)
+  end
+
+  def add_to_watch_list
+    watch_list
     redirect_to user_preferences_path
+  end
+
+  def remove_from_watch_list
+    watch_list
+    redirect_to profile_path
   end
 
   private

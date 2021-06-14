@@ -7,14 +7,18 @@
         <div class="poster-profile col-lg-2">
           <%= image_tag  "https://image.tmdb.org/t/p/w500#{movie_pick.movie.poster_url}", class: 'movie-img rounded' %>
         </div>
-
+        
         <div class="movies-recap col-lg-5">
           <h3> <%= movie_pick.movie.title %> </h3>
           <p> <%= movie_pick.movie.overview.slice(0,140)+(movie_pick.movie.overview.length > 140 ? "..." : "") %></p>
         </div>
+      <% end %>
+
+      <%= link_to remove_from_watch_list_path(movie_pick), method: :patch do %>
+        <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_refuse_c7xy1b.png" %>
+      <% end %>
     <hr>
 
-      <% end %>
     <% end %>
   </div>
 
