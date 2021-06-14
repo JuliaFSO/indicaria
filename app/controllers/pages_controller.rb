@@ -2,13 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @movies_array = []
-    movies = Movie.all.sample(12)
-    movies.each do |movie|
-      if movie.poster_url != nil 
-        @movies_array << movie
-      end
-    end
+    @movies_array = Movie.order("vote_average DESC").where.not(poster_url: nil).first(50).sample(12)
   end
 
   def dashboard
