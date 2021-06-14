@@ -1,14 +1,45 @@
-<div class="container mt-5 d-flex flex-row border">
-  <div class="div-avatar border border-secondary justify-content-center">
-    <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %>
-    Likes
+<div class="container w-100 mt-5 d-flex flex-row justify-content-center">
+  <div class="div-avatar w-100">
+    
+    <div class="div-avatar border border-secondary w-100 position-relative mt-5">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class:"avatar-position" %>
+      <div class="avatar-profile">
+      <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %><br><br>
+      <span class="div-avatar mt-4"> <%= @movie_count %> Matchs</span>
+      </div>
+    </div>
+
+    <div class="w-100 p-2 mt-3">
+      <button class="btn-profile btn-block">
+        <%= link_to "Dashboard", dashboard_path, class:"btn-font" %>
+      </button>
+    </div>
+    <div class="w-100 p-2">
+      <button class="btn-profile btn-block">
+        <%= link_to "Vamos dar mais match?", user_preferences_path, class:"btn-font" %>
+      </button>
+    </div>
+
   </div>
 
+  <div class="border border-secondary ml-3 p-1 d-flex-inline">
+    <% @movie_picks.each do |movie_pick| %>
+    <%= link_to movie_path(movie_pick.movie), class:'text-decoration-none' do  %>
 
-  <div class="row align-items-center border grow">
+        <div class="border-bottom row col-lg-12 mt-3 pb-5 d-flex ml-1">
+          <div class="col-4 poster-movie-index">
+            <%= image_tag "https://image.tmdb.org/t/p/w500#{movie_pick.movie.poster_url}", class:'movie-img-index rounded' %>
+          </div>
+          <div class="col-8 movies-infos-index align-self-center">
+            <h3><%= movie_pick.movie.title.slice(0,29)+(movie_pick.movie.title.length > 29 ? "..." : "") %></h3>
+            <br>
+            <span class="item-genero"> Gênero: </span> <span class="info-genero"> <%= "#{movie_pick.movie.genre}"%></span><br>
+            <br>
+            <p> <%= movie_pick.movie.overview.slice(0,265)+(movie_pick.movie.overview.length > 265 ? "..." : "") %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
-  </div>
-  <div>
-    <%= @movie_count %>
-  </div>
 </div>

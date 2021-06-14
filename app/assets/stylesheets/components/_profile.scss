@@ -46,4 +46,46 @@
 .div-avatar {
   width: 350px;
   height: 370px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Poppins', sans-serif;
+  color:black;
+  font-weight: bold;
+  padding-top: 40px;
+}
+
+.avatar-profile {
+  justify-content: center;
+  justify-self: center;
+  padding-top: 25%;
+}
+
+.avatar-position {
+  position: absolute;
+  right: 25%;
+  top: -25%;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  display: block;
+  margin-left: 25%;
+  width: 200px;
+}
+
+.btn-profile {
+  background-color: #97B1A6;
+  border-radius: 10px;
+  height: 40px;
+  align-self: center;
+  justify-items: center;
+  border: none;
+  display: block;
+  flex-grow: 1;
+}
+
+.btn-profile:hover {
+  background-color: #7cad99;
+  border-radius: 10px;
+  border: none;
 }
