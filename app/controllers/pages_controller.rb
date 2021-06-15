@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     end
 
     @genres = current_user.movie_picks.where(watch_list: true).map(&:movie).pluck(:genre).uniq
-
+    
   end
 
   def user_preferences
