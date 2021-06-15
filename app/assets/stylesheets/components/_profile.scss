@@ -8,6 +8,7 @@
     font-weight: regular;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
   }
 
   p {
@@ -15,16 +16,18 @@
     font-weight: regular;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: 'Raleway', sans-serif;
+    text-decoration: none;
   }
 }
 
 .poster-profile {
   background: center;
   opacity: 1;
-  width: 120px;
+  width: 150px;
   position: relative;
   box-sizing: border-box;
   padding-bottom: 50px;
+  text-decoration: none;
 }
 
 .movie-img {
@@ -33,4 +36,86 @@
   object-fit: cover;
   object-position: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  text-decoration: none;
+}
+
+.movie-show-link {
+  text-decoration: none !important;
+}
+
+.div-avatar {
+  width: 350px;
+  height: 370px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Poppins', sans-serif;
+  color:black;
+  font-weight: bold;
+}
+
+.div-avatar-movies {
+  width: 350px;
+  height: 370px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Poppins', sans-serif;
+  color:black;
+  font-weight: bold;
+  padding-top: 40px;
+}
+
+.avatar-profile {
+  justify-content: center;
+  justify-self: center;
+  padding-top: 15%;
+}
+
+.avatar-profile-movies {
+  justify-content: center;
+  justify-self: center;
+  padding-top: 25%;
+  position: relative;
+}
+
+.avatar-position {
+  position: absolute;
+  right: 40%;
+  left: 40%;
+  top: -25%;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  display: block;
+  width: 200px;
+}
+
+.avatar-position-movies {
+  position: absolute;
+  right: 25%;
+  left: 25%;
+  top: -25%;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  display: block;
+  width: 200px;
+}
+
+.btn-profile {
+  background-color: #618594;
+  border-radius: 10px;
+  height: 40px;
+  align-self: center;
+  justify-items: center;
+  border: none;
+  display: block;
+  flex-grow: 1;
+}
+
+.btn-profile:hover {
+  background-color: #417991;
+  border-radius: 10px;
+  border: none;
 }
