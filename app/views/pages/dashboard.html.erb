@@ -1,7 +1,7 @@
-<div  class="container mt-3 d-flex flex-row justify-content-around border border-secondary">
-  <div class="mt-3 border border-secondary">
+<div  class="container mt-3 d-flex flex-row justify-content-around">
+  <div class="mt-3">
     <% if @movie_picks.present? %> 
-      <div class="movie-container-up mt-4 title-container-up border border-secondary">
+      <div class="movie-container-up mt-4 title-container-up">
         <%= image_tag  "https://image.tmdb.org/t/p/w500#{@movie_picks.movie.poster_url}", class: 'movie-img-up rounded img-fluid width:100%' %>
         <p> <%= @movie_picks.movie.title %> <p/>
       <% else %>
@@ -10,12 +10,12 @@
       </div>
 
   </div>
-
 </div>
 
-    <div class="w-100 d-flex justify-self-center">
+    <div class="w-100 text-center">
       <h2>Você também pode selecionar o filme de acordo com o mood do dia! Veja abaixo.</h2>
     </div>
+
 <%= render 'shared/background_button_user' %>
 
   <div class="w-100 text-start p-5">
