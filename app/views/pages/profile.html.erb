@@ -5,7 +5,7 @@
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/tmfreire", class:"avatar-position img-fluid height:100%" %>
       <div class="avatar-profile">
       <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %><br><br>
-      <span class="div-avatar mt-4"> <%= @movie_count %> Matchs</span>
+      <span class="div-avatar"> <%= @movie_count %> Matchs</span>
       </div>
     </div>
 
@@ -21,29 +21,36 @@
     </div>
 
   </div>
-
-  <div class="border border-secondary ml-3 p-1 d-flex-inline">
-    <% @movie_picks.each do |movie_pick| %>
-    <div class="w-100 text-right mt-4 border-1 pr-3">
-    <%= link_to remove_from_watch_list_path(movie_pick), method: :patch do %>
-      <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_refuse_c7xy1b.png", size:"40", class:"ml-5" %>
-    <% end %>
-    </div>
-    <%= link_to movie_path(movie_pick.movie), class:'text-decoration-none' do  %>
-        <div class="border-bottom row col-lg-12 mt-3 pb-5 d-flex ml-1">
-          <div class="col-4 poster-movie-index">
-            <%= image_tag "https://image.tmdb.org/t/p/w500#{movie_pick.movie.poster_url}", class:'movie-img-index rounded' %>
-          </div>
-          <div class="col-8 movies-infos-index align-self-center">
-            <h3><%= movie_pick.movie.title.slice(0,29)+(movie_pick.movie.title.length > 29 ? "..." : "") %></h3>
-            <br>
-            <span class="item-genero"> Gênero: </span> <span class="info-genero"> <%= "#{movie_pick.movie.genre}"%></span><br>
-            <br>
-            <p> <%= movie_pick.movie.overview.slice(0,265)+(movie_pick.movie.overview.length > 265 ? "..." : "") %></p>
-          </div>
-        </div>
+  <% if @movie_picks.present? %> 
+    <div class="border border-secondary ml-3 p-1 d-flex-inline">
+      <% @movie_picks.each do |movie_pick| %>
+      <div class="w-100 text-right mt-4 border-1 pr-3">
+      <%= link_to remove_from_watch_list_path(movie_pick), method: :patch do %>
+        <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_refuse_c7xy1b.png", size:"40", class:"ml-5" %>
       <% end %>
-    <% end %>
-  </div>
+      </div>
+      <%= link_to movie_path(movie_pick.movie), class:'text-decoration-none' do  %>
+          <div class="border-bottom row col-lg-12 mt-3 pb-5 d-flex ml-1">
+            <div class="col-4 poster-movie-index">
+              <%= image_tag "https://image.tmdb.org/t/p/w500#{movie_pick.movie.poster_url}", class:'movie-img-index rounded' %>
+            </div>
+            <div class="col-8 movies-infos-index align-self-center">
+              <h3><%= movie_pick.movie.title.slice(0,29)+(movie_pick.movie.title.length > 29 ? "..." : "") %></h3>
+              <br>
+              <span class="item-genero"> Gênero: </span> <span class="info-genero"> <%= "#{movie_pick.movie.genre}"%></span><br>
+              <br>
+              <p> <%= movie_pick.movie.overview.slice(0,265)+(movie_pick.movie.overview.length > 265 ? "..." : "") %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  <% else %>
+
+    <div>
+    </div>
+  
+  <% end %>
 
 </div>
