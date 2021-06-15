@@ -31,6 +31,7 @@ gem 'pg_search'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rest-client'
 gem 'devise'
+gem 'cloudinary', '~> 1.18', '>= 1.18.1'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

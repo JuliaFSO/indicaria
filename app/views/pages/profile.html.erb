@@ -1,10 +1,10 @@
 <div class="container w-100 mt-5 d-flex flex-row justify-content-center">
-  
+
   <% if @movie_picks.present? %>
   
     <div class="div-avatar w-100">
       <div class="div-avatar border border-secondary w-100 position-relative mt-5">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/tmfreire", class:"avatar-position-movies img-fluid height:100%" %>
+        <%= cl_image_tag current_user.avatar.key, class:"avatar-position img-fluid height:100%" %>
         <div class="avatar-profile-movies mt-5">
         <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %><br><br>
         <span class="div-avatar-movies"> <%= @movie_count %> Matchs</span>
@@ -52,7 +52,7 @@
     <div class="container w-100 mt-5">
       <div class="div-avatar w-100">
         <div class="div-avatar border border-secondary w-100 position-relative mt-5">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/tmfreire", class:"avatar-position img-fluid height:100%" %>
+          <%= cl_image_tag current_user.avatar.key, class:"avatar-position img-fluid height:100%" %>
           <div class="avatar-profile">
             <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %><br><br>
             <span class="div-avatar"> <%= @movie_count %> Matchs</span>

@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :movie_picks
   
+  has_one_attached :avatar
+  
 end
