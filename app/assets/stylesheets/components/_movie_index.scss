@@ -1,5 +1,5 @@
 .poster-movie-index {
-  background: left;
+  background: justify;
   opacity: 1;
   width: 180px;
   position: relative;
@@ -7,7 +7,7 @@
 }
 
 .movies-infos-index {
-  text-align: left;
+  text-align: justify;
   position: relative;
   color: black;
 
@@ -16,7 +16,7 @@
     font-weight: regular;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: 'Poppins', sans-serif;
-    text-align: left;
+    text-align: justify;
       &:hover {
           font-weight: bold;
       }
@@ -26,9 +26,6 @@
     font-size: 14px;
     font-weight: regular;
     font-family: 'Raleway', sans-serif;
-      &:hover {
-          font-weight: bold;
-      }
   }
 }
 

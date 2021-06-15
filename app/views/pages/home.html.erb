@@ -1,18 +1,21 @@
 <%= render 'shared/banner'%>
 
-<div class="d-flex row justify-content-center w-120 mx-auto mb-5 pt-5">
+<div class="d-flex row w-120 mx-auto mb-5 pt-5 col-10 ">
+  <h2 class="title-home col-10 align-items-left mt-3">Os mais populares</h2>
+  <div class="justify-content-center">
 
-  <div class="justify-content-around col-6 d-flex flex-wrap h-20 align-items-center mx-auto">
-    <% @movies_array.each do |movie| %>
-      <div class="col-2 movie-container-home">
-      <%= link_to movie_path(movie) do %>
-        <%=image_tag "https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: 'movie-img-home rounded' %>
-          <div class="title-container-home">
-            <p><%= movie.title.slice(0,18)+(movie.title.length > 18 ? "..." : "") %></p>
+    <div class="justify-content-around d-flex flex-wrap h-20 align-items-center mx-auto">
+      <% @movies_array.each do |movie| %>
+        <div class="col-2 movie-container-home">
+        <%= link_to movie_path(movie), class:'text-decoration-none' do %>
+          <%=image_tag "https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: 'movie-img-home rounded' %>
+            <div class="title-container-home rounded">
+              <p><%= movie.title.slice(0,18)+(movie.title.length > 18 ? "..." : "") %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
 
