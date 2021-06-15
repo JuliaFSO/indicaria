@@ -34,9 +34,9 @@
         <%= link_to "Meu perfil", profile_path, class: "navbar-link" %>
       </li>
       <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/tmfreire", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Meu perfil", "profile_path", class: "dropdown-item" %>
+          <%= link_to "Edite seus dados", edit_user_registration_path, class: "dropdown-item" %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
