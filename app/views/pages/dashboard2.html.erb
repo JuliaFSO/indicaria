@@ -1,4 +1,8 @@
 <div  class="container mt-3 d-flex flex-row justify-content-around border border-secondary">
+  <div class="text-start">
+    <%= image_tag  "https://res.cloudinary.com/dsjv33crm/image/upload/v1623324507/indicaria/logo_shadow_sfqgfg.png", class: 'indicaria-logo img-fluid height:100%' %>
+  </div>
+
   <div class="mt-3 border border-secondary">
     <% if @movie_picks.present? %> 
       <div class="movie-container-up mt-4 title-container-up border border-secondary">
@@ -9,6 +13,10 @@
       <% end %>
       </div>
 
+  </div>
+
+  <div class="text-center">
+    <h2 class="indica">para você!</h2>
   </div>
 </div>
 
