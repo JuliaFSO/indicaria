@@ -8,20 +8,23 @@
         <h1> Você não tem nenhum filme dessa categoria em sua lista! </h1>
       <% end %>
       </div>
-
   </div>
 </div>
 
-    <div class="w-100 text-center">
-      <h2>Você também pode selecionar o filme de acordo com o mood do dia! Veja abaixo.</h2>
-    </div>
+<div class="w-100 text-center">
+  <h2>Você também pode selecionar o filme de acordo com o mood do dia! Veja abaixo.</h2>
+</div>
 
 <%= render 'shared/background_button_user' %>
 
   <div class="w-100 text-start p-5">
     <h2>Qual seu mood do dia?</h2>
     <% @genres.each do |genre| %>
-      <%= link_to genre, dashboard_path(query: genre), class: "mr-3" %>
+      <% if Rails.application.assets.find_asset("#{genre}.png") %>
+        <%= link_to image_tag("#{genre}.png", class:"genre-image"), dashboard_path(query: genre), class: "mr-3" %>
+      <% else %>
+        <%= link_to genre, dashboard_path(query: genre), class: "genre" %>
+      <% end %>
     <% end %>
   </div>
 

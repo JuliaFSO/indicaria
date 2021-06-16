@@ -1,16 +1,16 @@
 .movie-container-home {
   opacity: 1;
-  width: 180px;
-  position: relative;
+  width: 180px !important;
   box-sizing: border-box;
   padding-bottom: 50px;
   padding-top: 30px;
+  margin-right: 50px;
 }
 
 .movie-img-home {
   width: 100%;
   max-width: 180px !important;
-  height: 240px !important;
+  min-height: 250px !important;
   object-fit: cover;
   object-position: center;
   box-shadow: rgba(0, 0, 0, 0.22) 0px 22px 70px 4px;
@@ -21,6 +21,7 @@
 
 .title-container-home {
   justify-content: center;
+  max-width: 180px !important;
   align-items: center;
   font-size: 14px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);

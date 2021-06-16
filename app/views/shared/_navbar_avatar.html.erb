@@ -23,18 +23,22 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active align-self-center">
-        <%= link_to "Dar Matchs", user_preferences_path, class: "navbar-link" %>
-      </li>
-      <li class="nav-item active align-self-center">
-        <%= link_to "Indicações", dashboard_path, class: "navbar-link" %>
-      </li>
-      <li class="nav-item active align-self-center">
-        <%= link_to "Meu perfil", profile_path, class: "navbar-link" %>
-      </li>
+    <ul class="navbar-nav mr-auto align-items-center">
+        <li class="nav-item active align-self-center">
+          <%= link_to "Dar matches", user_preferences_path, class: "navbar-link" %>
+        </li>
+        <li class="nav-item active align-self-center">
+          <%= link_to "Indicações", dashboard_path, class: "navbar-link" %>
+        </li>
+        <li class="nav-item active align-self-center">
+          <%= link_to "Meu perfil", profile_path, class: "navbar-link" %>
+        </li>
       <li class="nav-item dropdown">
-        <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% if current_user.avatar.present? %>
+          <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623793239/indicaria/sem_avatar_lu2zww.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Edite seus dados", edit_user_registration_path, class: "dropdown-item" %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
