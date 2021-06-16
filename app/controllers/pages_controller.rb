@@ -16,7 +16,12 @@ class PagesController < ApplicationController
       @movie_picks = @movie_picks.sample
     end
 
+    if @movie_picks.nil?
+      redirect_to user_preferences_path
+    end
+    
     @genres = current_user.movie_picks.where(watch_list: true).map(&:movie).pluck(:genre).uniq
+
 
   end
 

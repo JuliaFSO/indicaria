@@ -15,6 +15,24 @@ h2 {
 .indicaria-logo {
   width: 400px;
   padding-top: 25%;
+}
 
+.btn-dashboard {
+  background-color: #618594;
+  border-radius: 10px;
+  height: 150px;
+  align-self: center;
+  justify-items: center;
+  border: none;
+  display: block;
+  flex-grow: 1;
+  padding: 25px, 100px;
+  font-size: 40px;
+  font-weight: bold;
+}
 
+.btn-dashboard:hover {
+  background-color: #417991;
+  border-radius: 10px;
+  border: none;
 }
