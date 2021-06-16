@@ -24,7 +24,10 @@ class PagesController < ApplicationController
     @movie = Movie.where.not(poster_url: nil).sample
     @movie = Movie.where.not(poster_url: nil).sample until current_user.movie_picks.where(movie: @movie).empty?
     @pick = MoviePick.create(user: current_user, movie: @movie, recommended: true)
-    
+    @movies = []
+    4.times do
+      @movies << Movie.where.not(poster_url: nil ).sample    
+    end
   end
 
   def profile
