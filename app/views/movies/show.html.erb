@@ -16,12 +16,13 @@
       <% end %>
       <span class="items"> Nota: </span> <span class="info"><%= "#{@movie.vote_average}"%></span><br>
       <span class="items"> Ano de lançamento: </span> <span class="info"><%= "#{@movie.release_year}"%></span><br>
-      <span class="info"><%= "#{@movie.runtime}"%></span><span class="items"> Minutos</span3><br>
+      <span class="items"> Duração: </span><span class="info"><%= "#{@movie.runtime}"%></span><span class="info"> Minutos</span3><br>
       <span class="items"> Gênero: </span> <span class="info"> <%= "#{@movie.genre}"%></span><br>
       <span class="items"> Idioma: </span>  <span class="info"><%= "#{@movie.language}"%></span><br>
       <span class="items"> País de origem: </span>  <span class="info"><%= "#{@movie.country}"%></span>
     </div>
-    <div class="col-1 mr-1">
+
+    <div class="col-1 mr-1 align-items-center">
       <%= link_to   add_to_profile_path(@pick), method: :patch do %>
         <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %>
       <% end %>
@@ -43,7 +44,7 @@
 
   <div class="row">
     <form>
-      <input type="button" class="col align-self-end btn btn-dark mt-5" value="Go back!" onclick="history.back()">
+      <input type="button" class="col align-self-end btn-show mt-5" value="Go back!" onclick="history.back()">
     </form>
   </div>
 </div>
