@@ -12,3 +12,8 @@
 @import "background_button";
 @import "carousel";
 @import "dashboard";
+
+body {
+  background-image: url(background);
+  background-position: cover;
+}
