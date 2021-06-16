@@ -4,10 +4,19 @@
   
     <div class="div-avatar w-100">
       <div class="div-avatar border border-secondary w-100 position-relative mt-5">
-        <%= cl_image_tag current_user.avatar.key, class:"avatar-position img-fluid height:100%" %>
+        <% if current_user.avatar.present? %>
+          <%= cl_image_tag current_user.avatar.key, class: "avatar-position img-fluid height:100%" %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623792222/indicaria/sem_avatar_ytrasv.png", class: "avatar-position img-fluid height:100%" %>
+        <% end %>
+
         <div class="avatar-profile-movies mt-5">
         <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %><br><br>
-        <span class="div-avatar-movies"> <%= @movie_count %> Matches</span>
+        <% if @movie_count > 1 %>
+          <span class="div-avatar-movies"> <%= @movie_count %> Match</span>
+        <% else %>
+          <span class="div-avatar-movies"> <%= @movie_count %> Matches</span>
+        <% end %>
         </div>
 
       </div>
