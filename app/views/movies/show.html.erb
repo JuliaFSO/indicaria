@@ -1,17 +1,19 @@
-<div  class="container mt-3">
+<div  class="container mt-5">
 
-  <div class="d-flex justify-content-around">
+  <div class="row justify-content-around align-items-start">
     
-    <div class="mr-5 align-self-center">
+    <div class="col">
       <%=image_tag "https://image.tmdb.org/t/p/w500#{@movie.poster_url}", alt: @movie.poster_url, class:"movie-poster mt-3" %>
-      <% if @movie.provider_logo != "" %>
-        <h3 class="provider"> Disponível em: </h3><%= image_tag "https://image.tmdb.org/t/p/w500#{@movie.provider_logo}", alt: @movie.provider_logo, class:"provider-logo" %> 
-      <% end %>
     </div>
 
-    <div>
-      <h1 class="title text-center m-5"> <%= @movie.title%> </h1><br>
-      <span class="items"> Sinopse: <br></span> <span class="info"><%= "#{@movie.overview}"%></span><br><br>
+    <div class="col">
+      <h1 class="title mb-5"> <%= @movie.title%> </h1><br>
+
+      <% if @movie.overview.present? %>
+        <span class="items"> Sinopse: <br></span> <span class="info text-justify"><%= "#{@movie.overview}"%></span><br><br>
+      <% else %>
+        <br>
+      <% end %>
       <span class="items"> Nota: </span> <span class="info"><%= "#{@movie.vote_average}"%></span><br>
       <span class="items"> Ano de lançamento: </span> <span class="info"><%= "#{@movie.release_year}"%></span><br>
       <span class="info"><%= "#{@movie.runtime}"%></span><span class="items"> Minutos</span3><br>
@@ -19,19 +21,31 @@
       <span class="items"> Idioma: </span>  <span class="info"><%= "#{@movie.language}"%></span><br>
       <span class="items"> País de origem: </span>  <span class="info"><%= "#{@movie.country}"%></span>
     </div>
-
-
+    <div class="col-1 mr-1">
+      <%= link_to   add_to_watch_list_path(@pick), method: :patch do %>
+        <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %>
+      <% end %>
+    </div>
   </div>
 
-  <div class=" d-flex justify-content-center mt-5">
-    <% if @movie.trailer_url %>
-      <iframe class='trailer' src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-    <% end %>
+  <div class=" row align-items-start mt-5 ">
+    <div class="col">
+      <% if @movie.provider_logo != "" %>
+        <h3 class="provider"> Disponível em: </h3><%= image_tag "https://image.tmdb.org/t/p/w500#{@movie.provider_logo}", alt: @movie.provider_logo, class:"provider-logo mt-3" %>
+      <% end %>
+    </div>
+    <div class="col">
+      <% if @movie.trailer_url %>
+        <iframe class='trailer' src='https://www.youtube.com/embed/<%= @movie.trailer_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+      <% end %>
+    </div>
   </div>
 
-  <form class='row'>
-    <input type="button" class="btn btn-dark mt-5 col align-self-end " value="Go back!" onclick="history.back()">
-  </form>
+  <div class="row">
+    <form>
+      <input type="button" class="col align-self-end btn btn-dark mt-5" value="Go back!" onclick="history.back()">
+    </form>
+  </div>
 </div>
 
 <% if current_user %>
