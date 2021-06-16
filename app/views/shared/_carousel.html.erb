@@ -1,0 +1,30 @@
+<div class="tinder mx-auto">
+  <div class="tinder--status"> 
+      <i class="fa fa-times"></i>
+      <i class="fa fa-heart"></i>    
+  </div>
+
+  <div class="tinder--cards">
+    <div class="tinder--card">
+      <%= link_to movie_path(@pick.movie) do %>
+        <%=image_tag "https://image.tmdb.org/t/p/w500#{@pick.movie.poster_url}" %>
+      <% end %>
+    </div>
+
+    <div class="tinder--card blur">
+      <% @movies.each do |movie| %>
+          <%= image_tag "https://image.tmdb.org/t/p/w500#{movie.poster_url}" %>
+      <% end %>  
+    </div>
+  </div>  
+  <div class="tinder--buttons">
+    <%= link_to refuse_path(@pick), class:"text-decoration-none", id: "nope-link", method: :patch do %>
+      <button id="nope"><i class="fa fa-times"></i></button>
+    <% end %>
+    <%= link_to add_to_watch_list_path(@pick), id: "love-link", method: :patch do %>
+      <button id="love"><i class="fa fa-heart"></i></button>
+    <% end %>
+  </div>
+</div>
+
+<script src="https://hammerjs.github.io/dist/hammer.js"></script>
