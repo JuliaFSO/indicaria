@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @pick = MoviePick.create(user: current_user, movie: @movie, recommended: true)
   end
 
 end
