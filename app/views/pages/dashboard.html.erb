@@ -20,7 +20,11 @@
   <div class="w-100 text-start p-5">
     <h2>Qual seu mood do dia?</h2>
     <% @genres.each do |genre| %>
-      <%= link_to genre, dashboard_path(query: genre), class: "mr-3" %>
+      <% if Rails.application.assets.find_asset("#{genre}.png") %>
+        <%= link_to image_tag("#{genre}.png"), dashboard_path(query: genre), class: "mr-3" %>
+      <% else %>
+        <%= link_to image_tag("#{genre}.png"), dashboard_path(query: genre), class: "mr-3" %>
+      <% end %>
     <% end %>
   </div>
 
