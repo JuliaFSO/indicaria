@@ -21,14 +21,17 @@ class PagesController < ApplicationController
     end
     
     @genres = current_user.movie_picks.where(watch_list: true).map(&:movie).pluck(:genre).uniq
-  
+
   end
 
   def user_preferences
     @movie = Movie.where.not(poster_url: nil).sample
     @movie = Movie.where.not(poster_url: nil).sample until current_user.movie_picks.where(movie: @movie).empty?
     @pick = MoviePick.create(user: current_user, movie: @movie, recommended: true)
-    
+    @movies = []
+    4.times do
+      @movies << Movie.where.not(poster_url: nil ).sample    
+    end
   end
 
   def profile
