@@ -1,7 +1,7 @@
 require 'json'
 require 'open-uri'
 
-movie_id = 780
+movie_id = 1388
 # poster_image_url = 'https://image.tmdb.org/t/p/w500'
 
 puts '=' * 20
