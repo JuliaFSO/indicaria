@@ -8,7 +8,7 @@ puts '=' * 20
 puts 'Creating movies'
 puts '=' * 20
 
-250.times do
+220.times do
   begin
     url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['TMDB_KEY']}&language=pt-BR"
     open(url).status
