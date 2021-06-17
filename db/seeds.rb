@@ -4,7 +4,6 @@ require 'open-uri'
 movie_id = 1
 # poster_image_url = 'https://image.tmdb.org/t/p/w500'
 
-Movie.destroy_all
 puts '=' * 20
 puts 'Creating movies'
 puts '=' * 20
