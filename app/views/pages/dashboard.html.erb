@@ -9,7 +9,7 @@
 
 <%= render 'shared/background_button_user' %>
 
-  <div class="w-100 text-start p-5">
+  <div class="w-100 text-center p-5">
     <h2>Qual seu mood do dia?</h2>
     <% @genres.each do |genre| %>
       <% if Rails.application.assets.find_asset("#{genre}.png").to_s == "" %>
