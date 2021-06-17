@@ -29,6 +29,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.add {
+    font-size: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+    padding-top: 15px;
+}
+
 .provider-logo {
   width: 85px;
 }
@@ -47,4 +55,23 @@
   height: 392px !important;
   border: 1px solid black;
   border-radius: 2px;
+}
+
+.btn-show {
+  background-color: #832161;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 40px;
+  align-self: end;
+  justify-items: center;
+  border: none;
+  display: block;
+  flex-grow: 1;
+    &:hover {
+
+      background-color: #701C53;
+      border-radius: 10px;
+      border: none;
+    }
 }
