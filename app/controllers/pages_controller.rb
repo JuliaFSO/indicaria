@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [ :home, :credits ]
 
   def home
     @movies_array = Movie.order("vote_average DESC").where.not(poster_url: nil).first(50).sample(12)
@@ -37,6 +37,10 @@ class PagesController < ApplicationController
   def profile
     @movie_picks = current_user.movie_picks.where(watch_list: true, watched: false)
     @movie_count = current_user.movie_picks.where(watch_list: true).count
+  end
+
+  def credits
+
   end
 
 end

@@ -1,0 +1,35 @@
+.avatar-credits {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.icones {
+  font-size: 50px;
+  color: black;
+      &:hover {
+        color: #832161;
+  }
+}
+
+.name {
+  font-size: 30px;
+  color: #979797;
+  font-weight: bold;
+}
+
+#github {
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.h3-credits {
+  font-family: Lobster;
+  font-weight: bold;
+}
+
+.p-credits {
+  font-family: Poppins, sans-serif;
+  font-weight: regular;
+  font-size: 20px;
+}
