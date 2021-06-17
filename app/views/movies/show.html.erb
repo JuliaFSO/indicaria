@@ -10,7 +10,7 @@
       <h1 class="title mb-5"> <%= @movie.title%> </h1><br>
 
       <% if @movie.overview.present? %>
-        <span class="items"> Sinopse: <br></span> <span class="info text-justify"><%= "#{@movie.overview}"%></span><br><br>
+        <span class="items"> Sinopse: <br></span> <span class="info text-justify"><%= "#{@movie.overview}" %></span><br><br>
       <% else %>
         <br>
       <% end %>
@@ -22,13 +22,20 @@
       <span class="items"> País de origem: </span>  <span class="info"><%= "#{@movie.country}"%></span>
     </div>
 
-    <div class="col-1 mr-1 align-items-center">
-      <%= link_to   add_to_profile_path(@pick), method: :patch do %>
-        <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %>
-      <% end %>
-    </div>
+    <% if current_user %>
+      <div class="col-1 mr-1 align-items-center">
+        <%= link_to  add_to_profile_path(@pick), method: :patch do %>
+          <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %>
+        <% end %>
+      </div>
+    <% else  %>
+      <div class="col-1 mr-1 align-items-center">
+        <%= link_to  new_user_session_path do %>
+          <%= image_tag "https://res.cloudinary.com/dsjv33crm/image/upload/v1623365865/indicaria/button_heart_vbbkng.png" %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-
   <div class=" row align-items-start mt-5 ">
     <div class="col">
       <% if @movie.provider_logo != "" %>

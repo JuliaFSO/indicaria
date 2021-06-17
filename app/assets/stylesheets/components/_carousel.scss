@@ -54,9 +54,9 @@
 
 .tinder--card {
   display: inline-block;
-  width: 90vw;
-  max-width: 400px;
-  height: 63vh;
+  width: 50vw;
+  max-width: 300px;
+  max-height: 63vh;
   background: #FFFFFF;
   border-radius: 8px;
   overflow: hidden;
@@ -77,7 +77,7 @@
 
 .tinder--card img {
   width: 100%;
-  min-width: 400px !important;
+  min-width: 300px !important;
   pointer-events: none;
 }
 

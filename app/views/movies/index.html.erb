@@ -9,11 +9,11 @@
             </div>
 
             <div class="col-8 movies-infos-index align-self-center">
-              <h3><%= movie.title.slice(0,29)+(movie.title.length > 29 ? "..." : "") %></h3>
+              <h3><%= movie.title %></h3>
               <br>
               <span class="item-genero"> Gênero: </span> <span class="info-genero"> <%= "#{movie.genre}"%></span><br>
               <br>
-              <p> <%= movie.overview.slice(0,265)+(movie.overview.length > 265 ? "..." : "") %></p>
+              <p> <%= movie.overview.slice(0,400)+(movie.overview.length > 400 ? "..." : "") %></p>
             </div>
           </div>
         <% end %>
