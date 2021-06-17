@@ -1,14 +1,14 @@
 require 'json'
 require 'open-uri'
 
-movie_id = 135
+movie_id = 403
 # poster_image_url = 'https://image.tmdb.org/t/p/w500'
 
 puts '=' * 20
 puts 'Creating movies'
 puts '=' * 20
 
-220.times do
+300.times do
   begin
     url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['TMDB_KEY']}&language=pt-BR"
     open(url).status
