@@ -11,9 +11,9 @@ class PagesController < ApplicationController
     @movie_picks = current_user.movie_picks.where(watch_list: true, watched: false)
     if params[:query].present?
       @movie_picks = @movie_picks.select {|m| m.movie.genre == params[:query]}
-      @movie_picks = @movie_picks.sample
+      @movie_picks = @movie_picks.sample(3)
     else
-      @movie_picks = @movie_picks.sample
+      @movie_picks = @movie_picks.sample(3)
     end
 
     if @movie_picks.nil?
