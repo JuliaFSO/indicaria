@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
   get "user_preferences", to: "pages#user_preferences"
   get "profile", to: "pages#profile", as: :profile
+  get "credits", to: "pages#credits", as: :credits
   
   resources :movie_picks 
   
