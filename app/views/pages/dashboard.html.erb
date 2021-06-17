@@ -1,14 +1,6 @@
+
 <div  class="container mt-3 d-flex flex-row justify-content-around">
-  <div class="mt-3">
-    <% if @movie_picks.present? %> 
-      <div class="movie-container-up mt-4 title-container-up">
-        <%= image_tag  "https://image.tmdb.org/t/p/w500#{@movie_picks.movie.poster_url}", class: 'movie-img-up rounded img-fluid width:100%' %>
-        <p> <%= @movie_picks.movie.title %> <p/>
-      <% else %>
-        <h1> Você não tem nenhum filme dessa categoria em sua lista! </h1>
-      <% end %>
-      </div>
-  </div>
+  <%= render 'shared/carousel_dashboard' %>
 </div>
 
 <div class="w-100 text-center">
