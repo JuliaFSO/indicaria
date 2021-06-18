@@ -1,10 +1,9 @@
 .movies-recap {
-  text-align: justify;
   position: relative;
   color: black;
 
   h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: regular;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: 'Poppins', sans-serif;
@@ -17,6 +16,7 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
+    text-align: justify;
   }
 }
 
