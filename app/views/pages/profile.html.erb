@@ -46,7 +46,7 @@
           <%= image_tag "https://image.tmdb.org/t/p/w500#{movie_pick.movie.poster_url}", class:'movie-img-index rounded' %>
         </div>
         <div class="col-8 movies-infos-index align-self-center">
-          <h3><%= movie_pick.movie.title.slice(0,29)+(movie_pick.movie.title.length > 29 ? "..." : "") %></h3>
+          <h3><%= movie_pick.movie.title.slice(0,50)+(movie_pick.movie.title.length > 50 ? "..." : "") %></h3>
           <br>
           <span class="item-genero"> Gênero: </span> <span class="info-genero"> <%= "#{movie_pick.movie.genre}"%></span><br>
           <br>
