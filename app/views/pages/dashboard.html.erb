@@ -3,14 +3,15 @@
   <%= render 'shared/carousel_dashboard' %>
 </div>
 
-<div class="w-100 text-center">
-  <h2>Você também pode selecionar o filme de acordo com o mood do dia! Veja abaixo.</h2>
+<div class="w-100 text-center mt-4">
+  <h2>Você também pode selecionar o filme de acordo com o mood do dia!
+    <br>Veja abaixo.</h2>
 </div>
 
 <%= render 'shared/background_button_user' %>
 
   <div class="w-100 text-center p-5">
-    <h2>Qual seu mood do dia?</h2>
+    <h2 class="mb-5">Qual seu mood do dia?</h2>
     <% @genres.each do |genre| %>
       <% if Rails.application.assets.find_asset("#{genre}.png").to_s == "" %>
         <%= link_to genre, dashboard_path(query: genre), class: "genre" %>
