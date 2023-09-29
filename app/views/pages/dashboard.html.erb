@@ -13,10 +13,13 @@
   <div class="w-100 text-center p-5">
     <h2 class="mb-5">Qual seu mood do dia?</h2>
     <% @genres.each do |genre| %>
-      <% if Rails.application.assets.find_asset("#{genre}.png").to_s == "" %>
-        <%= link_to genre, dashboard_path(query: genre), class: "genre" %>
+      <% sanitized_genre = genre.present? ? genre.strip : nil %>
+      <% if Rails.application.assets.find_asset("#{sanitized_genre}.png").to_s == "" %>
+        <%= link_to sanitized_genre, "?query=#{sanitized_genre}", class: "genre" if sanitized_genre.present? %>
       <% else %>
-        <%= link_to image_tag("#{genre}.png", class:"genre-image"), dashboard_path(query: genre), class: "mr-3" %>
+        <%= link_to "?query=#{sanitized_genre}", class: "mr-3" do %>
+          <%= image_tag("#{sanitized_genre}.png", class: "genre-image") %>
+        <% end if sanitized_genre.present? %>
       <% end %>
     <% end %>
   </div>

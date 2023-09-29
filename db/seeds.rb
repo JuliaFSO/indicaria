@@ -37,7 +37,8 @@ puts '=' * 20
       pr_logo = ''
     end
     movie = Movie.create!(
-      title: movie['title'],
+      id_apimovie: movie['id'],
+      title: movie['original_title'],
       overview: movie['overview'],
       poster_url: movie['poster_path'],
       vote_average: movie['vote_average'],
@@ -45,12 +46,7 @@ puts '=' * 20
       runtime: movie['runtime'],
       genre: movie['genres'][0]['name'],
       trailer_url: video_id,
-      language: movie['spoken_languages'][0]['name'],
-      country: movie['production_countries'][0]['name'],
-      id_apimovie: movie['id'],
-      provider_name: pr_name,
-      provider_logo: pr_logo
-      
+      language: movie['original_language']
     )
 
     puts "'#{movie.title}' created."
