@@ -82,4 +82,3 @@ production:
   <<: *default
   database: indicaria_production
   username: indicaria
-  password: <%= ENV['INDICARIA_DATABASE_PASSWORD'] %>
