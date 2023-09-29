@@ -80,4 +80,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: indicaria_production
+  username: indicaria
+  password: <%= ENV['INDICARIA_DATABASE_PASSWORD'] %>
